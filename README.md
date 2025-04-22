@@ -26,7 +26,11 @@ Cuando el usuario autenticado accede a esta página:
 
 ![transfer1.php](./Imagenes/3.png)
 
-Se transfiere el dinero sin que el usuario lo sepa, (lo comprobamos mirando en los logs del servicio web metiendo el siguiente comando ( ***docker exec lamp-php83 /bin/bash -c "tail -f /var/log/apache2/other_vhosts_access.log"***):
+Se transfiere el dinero sin que el usuario lo sepa, (lo comprobamos mirando en los logs del servicio web metiendo el siguiente comando:
+
+```
+ ***docker exec lamp-php83 /bin/bash -c "tail -f /var/log/apache2/other_vhosts_access.log"***:
+```
 
 ![transfer1.php](./Imagenes/4.png)
 
