@@ -48,3 +48,24 @@ El usuario al realizar una transferencia, no se dá cuenta que en realidad ha re
 
 
 ## Mitigación de ataques CSRF
+
+### Validación de token CSRF
+
+Creamos un fichero llamado [transfer2.php](./Recursos/transfer2.php) que es una mejora de ***transfer.php*** que incluye una validación de token CSRF:
+
+Si en el navegador ahora ejecutamos *csrf_attack2.html* sale:
+
+![transfer1.php](./Imagenes/7.png)
+
+### Probamos varias  mitigaciones
+
+Creamos el siguiente fichero: [transfer3.php](./Recursos/transfer3.php) que incluye las siguientes mitigaciones:
+
+1. Bloquea todas las solicitudes GET (ya no se puede usar  para ataques CSRF).
+2. Verifica que el csrf_token coincida con el de la sesión.
+3. Verifica que la solicitud provenga del mismo dominio (HTTP_REFERER).
+4. Exige que las solicitudes sean AJAX (X-Requested-With: XMLHttpRequest).
+
+Si ejecutamos *csrf_attack2.html* redirecciona a ***transfer3.php*** y sale lo siguiente (ya que no se valida el token correctamente):
+
+![transfer1.php](./Imagenes/8.png)
